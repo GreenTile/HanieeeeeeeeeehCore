@@ -5,6 +5,7 @@
 using namespace Windows::Foundation;
 using namespace Windows::ApplicationModel::Core;
 using namespace Windows::ApplicationModel::Activation;
+using namespace Windows::UI::ViewManagement;
 using namespace Windows::ApplicationModel;
 using namespace Windows::UI;
 using namespace Windows::UI::Popups;
@@ -35,6 +36,10 @@ namespace Hanieeeh
 		// Window event handler
 		void OnClick(CoreWindow^, PointerEventArgs^);
 		void OnKeyDown(CoreWindow^, KeyEventArgs^);
+
+
+		// Props
+		bool FullScreen;
 	};
 
 	ref class AppSource sealed : IFrameworkViewSource
