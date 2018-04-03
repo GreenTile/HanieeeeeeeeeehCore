@@ -4,7 +4,7 @@
 
 using namespace Hanieeeh;
 
-App::App()
+App::App() : FullScreen(false)
 {
 }
 
@@ -64,6 +64,13 @@ void App::OnClick(CoreWindow ^, PointerEventArgs^ args)
 
 void App::OnKeyDown(CoreWindow ^, KeyEventArgs^ args)
 {
+	if (!FullScreen) {
+		ApplicationView::GetForCurrentView()->TryEnterFullScreenMode();
+	}
+	else
+		ApplicationView::GetForCurrentView()->ExitFullScreenMode();
+
+	FullScreen = !FullScreen;
 }
 
 IFrameworkView^ AppSource::CreateView()
